@@ -1,3 +1,23 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import url('./assets/reset');
+
+body,
+html,
+#root {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.font-large {
+  font-size: 18px;
+  font-weight: 600;
+  text-shadow: 0 0 15px #fc0;
+}
+
+.font-common {
+  font-size: 16px;
+}
+
+.font-small {
+  font-size: 14px;
+}

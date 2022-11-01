@@ -1,7 +1,7 @@
 {
-  "name": "vite-solid-tailwind-starter",
+  "name": "vite-solid-starter",
   "version": "1.0.0",
-  "description": "Starter using Vite + Solid + Tailwind CSS",
+  "description": "Starter using Vite + Solid",
   "scripts": {
     "start": "vite",
     "dev": "vite",
@@ -11,7 +11,6 @@
   "devDependencies": {
     "autoprefixer": "^10.2.6",
     "postcss": "^8.3.5",
-    "tailwindcss": "^2.2.4",
     "vite": "^2.3.8",
     "vite-plugin-solid": "^2.0.0"
   },
