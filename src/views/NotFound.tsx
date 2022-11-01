@@ -1,7 +1,7 @@
-import { Component } from 'solid-js';
+import { Component } from 'solid-js'
 
 const NotFound: Component = () => {
-  return <main>Not found</main>
-};
+  return <main>404 Not-Found...</main>
+}
 
-export default NotFound;
+export default NotFound

@@ -4,12 +4,6 @@ import { Link } from 'solid-app-router'
 
 import './index.less'
 
-enum novelType {
-  DEFAULT = 'text/plain',
-  TXT = 'txt',
-  EPUB = 'epub'
-}
-
 interface Novel {
   name: string
   size: number
@@ -95,7 +89,7 @@ const Home: Component = () => {
   }
 
   /**
-   * @desc 解析小说目录,名字,大小,文件类型
+   * @desc 解析小说目录,名字,大小,文件类型,内容
    * @param {*Novel} novel
    */
   const paareNovel = (novel: Novel) => {
@@ -103,33 +97,35 @@ const Home: Component = () => {
   }
 
   return (
-    <div id='home'>
-      <header>
-        <div class='controls-raw'>
-          <input type='text' placeholder='搜索' />
-          <input type='file' style='display:none;' accept='.txt,.epub' ref={uploadRef} onChange={uploadNovel} />
-          <button onclick={() => uploadRef.click()}>+</button>
-        </div>
-      </header>
-      <main>
-        <section>
-          <For each={novelList}>
-            {(item, index) => (
-              <div class='book'>
-                <p class='book-type-tag'> {item.type} </p>
-                <p class='font-large'> {item.name} </p>
-                <p style='letter-spacing:3px'>
-                  <b>{item.author}</b>
-                </p>
-              </div>
-            )}
-          </For>
-        </section>
-      </main>
-      <footer>
-        <For each={navLinks}>{link => <Link href={link.to}> {link.content} </Link>}</For>
-      </footer>
-    </div>
+    <>
+      <div id='home'>
+        <header>
+          <div class='controls-raw'>
+            <input type='text' placeholder='搜索' />
+            <input type='file' style='display:none;' accept='.txt,.epub' ref={uploadRef} onChange={uploadNovel} />
+            <button onclick={() => uploadRef.click()}>+</button>
+          </div>
+        </header>
+        <main>
+          <section>
+            <For each={novelList}>
+              {(item, index) => (
+                <div class='book' onclick={() => console.log(index())}>
+                  <p class='book-type-tag'> {item.type} </p>
+                  <p class='font-large'> {item.name} </p>
+                  <p style='letter-spacing:3px'>
+                    <b>{item.author}</b>
+                  </p>
+                </div>
+              )}
+            </For>
+          </section>
+        </main>
+        <footer>
+          <For each={navLinks}>{link => <Link href={link.to}> {link.content} </Link>}</For>
+        </footer>
+      </div>
+    </>
   )
 }
 
