@@ -1,99 +1,82 @@
-import { Component, For } from 'solid-js'
-
-import { Link } from 'solid-app-router'
+import { Component, For, createSignal } from 'solid-js'
 
 import './index.less'
+import NavBar from '../../components/NavBar'
 
-interface Novel {
+import parseBook from '../../util/parseBook'
+
+// interface Novel {
+//   name: string
+//   size: number | string
+//   type: string
+//   author?: string
+//   uploadTime?: string
+// }
+
+interface Book {
   name: string
-  size: number
+  size: number | string
   type: string
   author?: string
   uploadTime?: string
 }
 
-let novelList: Novel[] = [
-  {
-    name: '天龙八部',
-    size: 3662,
-    type: 'txt',
-    author: '金庸',
-    uploadTime: new Date().toLocaleDateString('zh-cn')
-  },
-  {
-    name: '笑傲江湖',
-    size: 4662,
-    type: 'txt',
-    author: '金庸',
-    uploadTime: new Date().toLocaleDateString('zh-cn')
-  },
-  {
-    name: '诛仙',
-    size: 16662,
-    type: 'txt',
-    author: '萧鼎',
-    uploadTime: new Date().toLocaleDateString('zh-cn')
-  },
-  {
-    name: '天龙八部',
-    size: 3662,
-    type: 'txt',
-    author: '金庸',
-    uploadTime: new Date().toLocaleDateString('zh-cn')
-  },
-  {
-    name: '笑傲江湖',
-    size: 4662,
-    type: 'txt',
-    author: '金庸',
-    uploadTime: new Date().toLocaleDateString('zh-cn')
-  },
-  {
-    name: '诛仙',
-    size: 16662,
-    type: 'txt',
-    author: '萧鼎',
-    uploadTime: new Date().toLocaleDateString('zh-cn')
-  }
-]
-
 // home,bookList
 const Home: Component = () => {
+  const [bookList, setBookList] = createSignal<Book[]>([
+    {
+      name: '笑傲江湖',
+      size: 36622,
+      type: 'txt',
+      author: '金庸'
+    }
+  ])
+
   // The ref for input[type=file]
   let uploadRef: HTMLInputElement
 
-  let navLinks = [
-    {
-      content: '阅读中',
-      to: '/reading'
-    },
-    {
-      content: '书架',
-      to: '/'
-    },
-    {
-      content: '关于',
-      to: '/about'
-    }
-  ]
-
   // upload novel[.txt,epub] from local
   const uploadNovel = e => {
-    const novel: Novel = e.target.files[0]
+    const novel = e.target.files[0]
 
     if (!novel) return
 
-    novel.uploadTime = new Date().toLocaleDateString('zh-cn')
+    const { name, size } = novel
 
-    paareNovel(novel)
+    let book: Book = {
+      name: name.split('.')[0],
+      type: name.split('.')[1],
+      size: `${Math.ceil(Number(size) / 1024)} MB`,
+      author: '金庸',
+      uploadTime: new Date().toLocaleDateString('zh-cn')
+    }
+
+    // console.log(book)
+
+    setBookList([...bookList(), book])
+
+    readBook(novel)
   }
 
   /**
-   * @desc 解析小说目录,名字,大小,文件类型,内容
+   * @desc 读取小说内容
    * @param {*Novel} novel
    */
-  const paareNovel = (novel: Novel) => {
-    console.log(novel)
+  const readBook = novel => {
+    const novelReader = new FileReader()
+
+    novelReader.readAsText(novel)
+
+    novelReader.addEventListener('load', e => {
+      const { result } = e.target
+
+      if (!result) return
+      parseBook(result)
+    })
+
+    novelReader.addEventListener('loadend', e => {
+      novelReader.abort()
+    })
   }
 
   return (
@@ -108,7 +91,7 @@ const Home: Component = () => {
         </header>
         <main>
           <section>
-            <For each={novelList}>
+            <For each={bookList()}>
               {(item, index) => (
                 <div class='book' onclick={() => console.log(index())}>
                   <p class='book-type-tag'> {item.type} </p>
@@ -121,9 +104,7 @@ const Home: Component = () => {
             </For>
           </section>
         </main>
-        <footer>
-          <For each={navLinks}>{link => <Link href={link.to}> {link.content} </Link>}</For>
-        </footer>
+        <NavBar />
       </div>
     </>
   )
