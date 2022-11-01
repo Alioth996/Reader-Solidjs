@@ -42,24 +42,23 @@ const Home: Component = () => {
     if (!novel) return
 
     const { name, size } = novel
-
     let book: Book = {
       name: name.split('.')[0],
       type: name.split('.')[1],
-      size: `${Math.ceil(Number(size) / 1024)} MB`,
+      size: `${(Number(size) / (1024 * 1024)).toFixed(2)}MB`,
       author: '金庸',
       uploadTime: new Date().toLocaleDateString('zh-cn')
     }
 
-    // console.log(book)
-
     setBookList([...bookList(), book])
+
+    console.log(book)
 
     readBook(novel)
   }
 
   /**
-   * @desc 读取小说内容
+   * @desc FileReader读取小说全部内容
    * @param {*Novel} novel
    */
   const readBook = novel => {
@@ -71,6 +70,7 @@ const Home: Component = () => {
       const { result } = e.target
 
       if (!result) return
+      // 解析小说
       parseBook(result)
     })
 
