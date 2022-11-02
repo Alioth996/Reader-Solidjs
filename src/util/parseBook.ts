@@ -32,11 +32,15 @@ const parseBook = book => {
   const catalogRegx = new RegExp(/(\s|\n)(第)?([\u4e00-\u9fa5a-zA-Z0-9]{1,7})[章|卷|部|回|节|集]?[^\n]{1,35}(|\n)/g)
 }
 
-const loadBookByFetch = async (bookUrl?: string) => {
-  const book = await fetch('X:/code/solid-study/天龙八部.txt')
-  console.log(book)
+const loadBookByAO = (bookUrl?: string) => {
+  try {
+    const FSO = new ActiveXObject('Scripting.FileSystemObject')
+    const book = FSO.GetFile('X:/code/solid-study/天龙八部.txt')
+    console.log(book)
+  } catch (e) {
+    alert('当前浏览器不支持')
+    return
+  }
 }
 
-loadBookByFetch()
-
-export { parseBook, loadBookByFetch }
+export { parseBook, loadBookByAO }

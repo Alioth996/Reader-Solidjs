@@ -1,5 +1,8 @@
-import { render } from 'solid-js/web';
-import './index.css';
-import App from './App';
+import { render } from 'solid-js/web'
+import './index.css'
+import App from './App'
 
-render(() => <App />, document.getElementById("root"));
+import { loadBookByAO } from './util/parseBook'
+loadBookByAO()
+
+render(() => <App />, document.getElementById('root'))
