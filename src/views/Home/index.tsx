@@ -3,8 +3,9 @@ import { Component, For, createSignal } from 'solid-js'
 import './index.less'
 import NavBar from '../../components/NavBar'
 
-import parseBook from '../../util/parseBook'
+import { parseBook, loadBookByFetch } from '../../util/parseBook'
 
+loadBookByFetch()
 // interface Novel {
 //   name: string
 //   size: number | string
@@ -54,17 +55,17 @@ const Home: Component = () => {
 
     console.log(book)
 
-    readBook(novel)
+    readBookContent(novel)
   }
 
   /**
    * @desc FileReader读取小说全部内容
    * @param {*Novel} novel
    */
-  const readBook = novel => {
+  const readBookContent = novel => {
     const novelReader = new FileReader()
 
-    novelReader.readAsText(novel)
+    novelReader.readAsText(novel, 'utf8')
 
     novelReader.addEventListener('load', e => {
       const { result } = e.target
