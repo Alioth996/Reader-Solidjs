@@ -33,7 +33,7 @@ const parseBook = book => {
 }
 
 const loadBookByFetch = async (bookUrl?: string) => {
-  const book = await fetch('../../../天龙八部.txt')
+  const book = await fetch('X:/code/solid-study/天龙八部.txt')
   console.log(book)
 }
 
