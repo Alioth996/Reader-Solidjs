@@ -18,7 +18,7 @@ const parseBook = book => {
   //   console.log(book)
 
   // 作者正则
-  const authorRegx = new RegExp(/(\s|\b)?[作者:]+[\u4e00-\u9fa5]{2,}/g)
+  const authorRegx = new RegExp(/(\s|\n)?[作者:]?[\u4e00-\u9fa5]{2,}(|\n)/g)
 
   /**
    *  (\s|\n) : 章节名以空格或换行符开始
