@@ -1,6 +1,8 @@
 import { Component, For, createSignal } from 'solid-js'
 
-import './index.less'
+import { Link } from 'solid-app-router'
+
+import './home.less'
 import NavBar from '../../components/NavBar'
 
 import { parseBook } from '../../util/parseBook'
@@ -93,13 +95,15 @@ const Home: Component = () => {
           <section>
             <For each={bookList()}>
               {(item, index) => (
-                <div class='book' onclick={() => console.log(index())}>
-                  <p class='book-type-tag'> {item.type} </p>
-                  <p class='font-large'> {item.name} </p>
-                  <p style='letter-spacing:3px'>
-                    <b>{item.author}</b>
-                  </p>
-                </div>
+                <Link href={`/reader/${index()}/${item.name}`}>
+                  <div class='book' onclick={() => console.log(index())}>
+                    <p class='book-type-tag'> {item.type} </p>
+                    <p class='font-large'> {item.name} </p>
+                    <p style='letter-spacing:3px'>
+                      <b>{item.author}</b>
+                    </p>
+                  </div>
+                </Link>
               )}
             </For>
           </section>
