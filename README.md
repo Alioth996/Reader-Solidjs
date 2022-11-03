@@ -14,17 +14,17 @@
 ### Installation
 
 ```sh
-yarn
+pnpm i
 ```
 
 ### Development
 
 ```sh
-yarn dev
+pnpm dev
 ```
 
 ### Build
 
 ```sh
-yarn build
+pnpm build
 ```
