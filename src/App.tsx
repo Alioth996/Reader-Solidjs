@@ -15,6 +15,10 @@ const routes = [
     component: lazy(() => import('./views/Reading/index'))
   },
   {
+    path: '/reader',
+    component: lazy(() => import('./views/Reader/index'))
+  },
+  {
     path: '*all',
     component: lazy(() => import('./views/NotFound'))
   }
