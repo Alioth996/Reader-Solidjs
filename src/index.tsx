@@ -2,7 +2,7 @@ import { render } from 'solid-js/web'
 import './index.css'
 import App from './App'
 
-import { loadBookByAO } from './util/parseBook'
-loadBookByAO()
+import { loadBook } from './util/parseBook'
+loadBook()
 
 render(() => <App />, document.getElementById('root'))
