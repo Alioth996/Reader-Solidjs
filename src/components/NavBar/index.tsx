@@ -19,7 +19,7 @@ let navLinks = [
   }
 ]
 
-const NavBar: Component = () => {
+const NavBar: Component = props => {
   return (
     <footer>
       <For each={navLinks}>{link => <Link href={link.to}> {link.content} </Link>}</For>
