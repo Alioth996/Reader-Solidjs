@@ -18,7 +18,7 @@ const parseBook = book => {
   //   console.log(book)
 
   // 作者正则
-  const authorRegx = new RegExp(/[作者:]?\W/g)
+  const authorRegx = new RegExp(/(\s|\b)?[作者:]+[\u4e00-\u9fa5]{2,}/g)
 
   /**
    *  (\s|\n) : 章节名以空格或换行符开始
@@ -29,18 +29,10 @@ const parseBook = book => {
    * (|\n) ：表示以换行符结尾
    * @参考资料 https://blog.csdn.net/qq_43257319/article/details/108530208
    */
+
   const catalogRegx = new RegExp(/(\s|\n)(第)?([\u4e00-\u9fa5a-zA-Z0-9]{1,7})[章|卷|部|回|节|集]?[^\n]{1,35}(|\n)/g)
 }
 
-const loadBookByAO = (bookUrl?: string) => {
-  try {
-    const FSO = new ActiveXObject('Scripting.FileSystemObject')
-    const book = FSO.GetFile('X:/code/solid-study/天龙八部.txt')
-    console.log(book)
-  } catch (e) {
-    alert('当前浏览器不支持')
-    return
-  }
-}
+const loadBook = (bookUrl?: string) => {}
 
-export { parseBook, loadBookByAO }
+export { parseBook, loadBook }
