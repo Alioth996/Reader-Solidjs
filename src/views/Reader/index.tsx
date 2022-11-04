@@ -1,14 +1,21 @@
 import { Link } from 'solid-app-router'
-import { Component, Show, createSignal } from 'solid-js'
+import { Component, Show, createSignal, onMount } from 'solid-js'
 import './reader.less'
+
+import { getBattery } from '../../util'
 
 const Reader: Component = () => {
   const [isbarMenuShow, setIsbarMenuShow] = createSignal(false)
+
+  const battery = getBattery()
 
   const showBarAndMenu = () => {
     setIsbarMenuShow(!isbarMenuShow())
   }
 
+  onMount(() => {
+    console.log(battery)
+  })
   return (
     <div id='Reader'>
       {/* 顶部栏 */}

@@ -11,16 +11,12 @@
 const getBattery = () => {
   let power = {
     isCharging: false,
-    level: 0,
-    needChargingTime: '0',
-    elseTime: '0'
+    level: 0
   }
 
   navigator.getBattery().then(battery => {
     power.isCharging = battery.charging
     power.level = battery.level
-    power.needChargingTime = battery.chargingTime
-    power.elseTime = battery.dischargingTime
 
     // onchargingchange: 充电状态改变时触发该监听函数
     // onchargingtimechange: 充满还需时间改变时触发该监听函数
@@ -32,12 +28,6 @@ const getBattery = () => {
     })
     battery.addEventListener('levelchange', () => {
       power.level = battery.level
-    })
-    battery.addEventListener('chargingtimechange', () => {
-      power.needChargingTime = battery.chargingTime
-    })
-    battery.addEventListener('dischargingtimechange', () => {
-      power.elseTime = battery.dischargingTime
     })
   })
 
