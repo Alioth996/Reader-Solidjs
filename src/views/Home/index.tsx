@@ -5,7 +5,7 @@ import { Link } from 'solid-app-router'
 import './home.less'
 import NavBar from '../../components/NavBar'
 
-import { parseBook } from '../../util/parseBook'
+import { parseBook } from '../../util'
 
 // interface Novel {
 //   name: string
