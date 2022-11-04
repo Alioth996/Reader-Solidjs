@@ -7,7 +7,6 @@ const Reader: Component = () => {
 
   const showBarAndMenu = () => {
     setIsbarMenuShow(!isbarMenuShow())
-    // console.log(isbarMenuShow)
   }
 
   return (
@@ -31,18 +30,19 @@ const Reader: Component = () => {
 
       {/* 底部菜单 */}
       <Show when={isbarMenuShow()}>
-        {/* <div id='reader-progress'>
-          <div> {'<'}</div>
-          <div>
-            <progress value='22' max='100'></progress>
-          </div>
-          <div> {'>'}</div>
-        </div> */}
-
         <div id='menu-nar'>
-          <div>目录</div>
-          <div>黑夜</div>
-          <div>设置</div>
+          <div id='reader-progress'>
+            <div>{'<'}</div>
+            <div class='flex-1'>
+              <progress value='10' max='100'></progress>
+            </div>
+            <div>{'>'}</div>
+          </div>
+          <div class='control-btn'>
+            <div>目录</div>
+            <div>黑夜</div>
+            <div>设置</div>
+          </div>
         </div>
       </Show>
     </div>
