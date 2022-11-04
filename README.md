@@ -39,17 +39,17 @@
 ### 运行
 
 ```sh
-pnpm install
+pnpm i
 ```
 
 
 ```sh
-pnpm dev
+yarn dev
 ```
 
 
 ```sh
-pnpm build
+yarn build
 ```
 
 
