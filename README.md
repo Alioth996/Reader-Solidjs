@@ -1,30 +1,55 @@
 # 使用 SolidJs 开发的一款离线小说阅读器
 
+
 ### Node version
 
 - 16.14.1
 
-### 功能
+---
 
-- 上传小说
+
+### 开发大纲
+
+![离线阅读器开发指南](./%E7%A6%BB%E7%BA%BF%E9%98%85%E8%AF%BB%E5%99%A8.png)
+
+
+---
+
+### 功能Todo
+
+- 导入本地小说
 - 阅读小说
-- 主题
-- 历史记录
+- 黑夜主题
+- 阅读历史
+- 阅读设置
 
-### Installation
+---
+
+### 效果图
+
+<br/>
+
+**书架界面**:
+
+![主页](./docs/images/bookpage.jpg)
+
+---
+
+
+### 运行
 
 ```sh
-yarn
+pnpm install
 ```
 
-### Development
 
 ```sh
-yarn dev
+pnpm dev
 ```
 
-### Build
 
 ```sh
-yarn build
+pnpm build
 ```
+
+
