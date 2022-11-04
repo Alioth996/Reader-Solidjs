@@ -1,4 +1,4 @@
-export function getBattery() {
+export default function () {
   //获取手机电量信息
   // charging: 是否在充电
   // chargingTime: 充满电还需要的时间(秒)

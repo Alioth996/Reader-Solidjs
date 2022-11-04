@@ -33,6 +33,4 @@ const parseBook = book => {
   const catalogRegx = new RegExp(/(\s|\n)(第)?([\u4e00-\u9fa5a-zA-Z0-9]{1,7})[章|卷|部|回|节|集]?[^\n]{1,35}(|\n)/g)
 }
 
-const loadBook = (bookUrl?: string) => {}
-
-export { parseBook, loadBook }
+export default parseBook
