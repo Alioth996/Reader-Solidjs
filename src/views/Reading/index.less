@@ -4,6 +4,30 @@
   height: 100%;
   flex-direction: column;
   .continue-reader-box {
-    padding: 0 30px;
+    height: 220px;
+    padding: 20px;
+    .continue-left {
+      justify-content: space-around;
+      flex: 1;
+    }
+  }
+  & > main {
+    padding: 0;
+    flex-direction: column;
+    #readed-history {
+      padding: 20px;
+      height: calc(100% - 220px);
+    }
+  }
+  & > #footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+  }
+  .reader-row {
+    padding: 10px 0;
+    height: 80px;
+    border-bottom: 1px solid #ccc;
   }
 }
