@@ -1,0 +1,36 @@
+@import url('../../assets/varible.less');
+
+button.s-button {
+  padding: 5px 10px;
+  background: @bg-white;
+  color: @font-color-dark;
+  text-align: center;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  border-radius: 3px;
+  font-size: 14px;
+
+  &.large {
+    width: 120px;
+    height: 50px;
+    font-size: 16px;
+  }
+  &.common {
+    width: 80px;
+    height: 32px;
+  }
+  &.small {
+    width: 60px;
+    height: 32px;
+    font-size: 14px;
+  }
+  &.primary {
+    color: @font-color-light;
+    background-color: @bg-primary;
+  }
+  &.grey {
+    color: @font-color-light;
+    background-color: @bg-dark;
+  }
+}
