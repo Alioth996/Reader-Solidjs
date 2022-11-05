@@ -6,6 +6,7 @@ import './home.less'
 import NavBar from '../../components/NavBar'
 
 import { parseBook } from '../../util'
+import Book from '../../components/Book'
 
 // interface Novel {
 //   name: string
@@ -96,13 +97,7 @@ const Home: Component = () => {
             <For each={bookList()}>
               {(item, index) => (
                 <Link href={`/reader/${index()}/${item.name}`}>
-                  <div class='book' onclick={() => console.log(index())}>
-                    <p class='book-type-tag'> {item.type} </p>
-                    <p class='font-large'> {item.name} </p>
-                    <p style='letter-spacing:3px'>
-                      <b>{item.author}</b>
-                    </p>
-                  </div>
+                  <Book book={item} />
                 </Link>
               )}
             </For>
