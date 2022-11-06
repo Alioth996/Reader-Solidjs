@@ -32,7 +32,60 @@ const Reader: Component = () => {
         <div id='catelog-title'>
           <p class='catelog'>第三章 崖高人远</p>
         </div>
-        <article></article>
+        <article>
+          <section>
+            <h4>第一章[节]</h4>
+            <p>
+              {' '}
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam ea magnam animi? Repellendus
+              necessitatibus possimus ipsum nam, veritatis voluptatibus quam, nesciunt, numquam illum dolorum aspernatur
+              praesentium. Perferendis molestiae iure quibusdam? Amet corrupti voluptas totam ut eligendi ratione odio
+              impedit dolore quisquam eum, enim quidem consectetur cumque quasi numquam suscipit molestias? Tempore
+              earum at impedit libero praesentium veritatis laborum vel corporis. Voluptatum debitis quidem distinctio
+              fuga corporis qui praesentium in provident accusantium sint fugit veritatis corrupti odio voluptate
+              laudantium, rerum nam soluta facere eligendi, autem at i
+            </p>
+          </section>
+          <section>
+            <h4>章节</h4>
+            <p>
+              {' '}
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam ea magnam animi? Repellendus
+              necessitatibus possimus ipsum nam, veritatis voluptatibus quam, nesciunt, numquam illum dolorum aspernatur
+              praesentium. Perferendis molestiae iure quibusdam? Amet corrupti voluptas totam ut eligendi ratione odio
+              impedit dolore quisquam eum, enim quidem consectetur cumque quasi numquam suscipit molestias? Tempore
+              earum at impedit libero praesentium veritatis laborum vel corporis. Voluptatum debitis quidem distinctio
+              fuga corporis qui praesentium in provident accusantium sint fugit veritatis corrupti odio voluptate
+              laudantium, rerum nam soluta facere eligendi, autem at i
+            </p>
+          </section>
+          <section>
+            <h4>章节</h4>
+            <p>
+              {' '}
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam ea magnam animi? Repellendus
+              necessitatibus possimus ipsum nam, veritatis voluptatibus quam, nesciunt, numquam illum dolorum aspernatur
+              praesentium. Perferendis molestiae iure quibusdam? Amet corrupti voluptas totam ut eligendi ratione odio
+              impedit dolore quisquam eum, enim quidem consectetur cumque quasi numquam suscipit molestias? Tempore
+              earum at impedit libero praesentium veritatis laborum vel corporis. Voluptatum debitis quidem distinctio
+              fuga corporis qui praesentium in provident accusantium sint fugit veritatis corrupti odio voluptate
+              laudantium, rerum nam soluta facere eligendi, autem at i
+            </p>
+          </section>
+          <section>
+            <h4>章节</h4>
+            <p>
+              {' '}
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam ea magnam animi? Repellendus
+              necessitatibus possimus ipsum nam, veritatis voluptatibus quam, nesciunt, numquam illum dolorum aspernatur
+              praesentium. Perferendis molestiae iure quibusdam? Amet corrupti voluptas totam ut eligendi ratione odio
+              impedit dolore quisquam eum, enim quidem consectetur cumque quasi numquam suscipit molestias? Tempore
+              earum at impedit libero praesentium veritatis laborum vel corporis. Voluptatum debitis quidem distinctio
+              fuga corporis qui praesentium in provident accusantium sint fugit veritatis corrupti odio voluptate
+              laudantium, rerum nam soluta facere eligendi, autem at i
+            </p>
+          </section>
+        </article>
       </main>
 
       {/* 底部菜单 */}
