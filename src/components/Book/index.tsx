@@ -1,4 +1,4 @@
-import './index.less'
+import './index.scss'
 
 export default function (props) {
   const { book = { name: '', author: '', type: 'txt' }, size } = props

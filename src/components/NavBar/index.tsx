@@ -2,7 +2,7 @@ import { Component, For } from 'solid-js'
 
 import { Link } from 'solid-app-router'
 
-import './index.less'
+import './index.scss'
 
 let navLinks = [
   {

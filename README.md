@@ -36,7 +36,7 @@
 
 **阅读器**
 
-![reader](docs/images/reader.jpg)
+![reader](docs/images/reader1.jpg)
 
 **阅读设置**
 

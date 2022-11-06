@@ -6,7 +6,7 @@ import SButton from '../../components/Button'
 
 import NavBar from '../../components/NavBar'
 
-import './index.less'
+import './index.scss'
 import ReadedRaw from './ReadedRaw'
 
 interface Book {

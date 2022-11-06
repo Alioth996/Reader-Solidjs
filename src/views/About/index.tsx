@@ -2,7 +2,7 @@ import AboutRaw from './AboutRaw'
 import AppTitle from '../../components/AppTitle'
 import NavBar from '../../components/NavBar'
 
-import './index.less'
+import './index.scss'
 import { For } from 'solid-js'
 
 interface rawInfo {

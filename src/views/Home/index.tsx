@@ -2,7 +2,7 @@ import { Component, For, createSignal } from 'solid-js'
 
 import { Link } from 'solid-app-router'
 
-import './home.less'
+import './home.scss'
 import NavBar from '../../components/NavBar'
 
 import { parseBook } from '../../util'

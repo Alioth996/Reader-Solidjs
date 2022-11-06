@@ -1,4 +1,4 @@
-@import url('../../assets/varible.less');
+@import '../../assets/varible.scss';
 
 #home {
   height: 100vh;
@@ -15,7 +15,7 @@
       width: 100%;
       gap: 10px;
       padding: 0 20px;
-      background: @bg-white;
+      background: $bg-white;
       input {
         flex: 1;
         padding: 7px;

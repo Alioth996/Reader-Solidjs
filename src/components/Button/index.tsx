@@ -1,4 +1,4 @@
-import './index.less'
+import './index.scss'
 
 const SButton = function (props) {
   const { size = 'common', type = '', text = '' } = props

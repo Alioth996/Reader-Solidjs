@@ -1,9 +1,9 @@
-@import url('../../assets/varible.less');
+@import '../../assets/varible.scss';
 
 button.s-button {
   padding: 5px 10px;
-  background: @bg-white;
-  color: @font-color-dark;
+  background: $bg-white;
+  color: $font-color-dark;
   text-align: center;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -26,11 +26,11 @@ button.s-button {
     font-size: 14px;
   }
   &.primary {
-    color: @font-color-light;
-    background-color: @bg-primary;
+    color: $font-color-light;
+    background-color: $bg-primary;
   }
   &.grey {
-    color: @font-color-light;
-    background-color: @bg-dark;
+    color: $font-color-light;
+    background-color: $bg-dark;
   }
 }

@@ -1,6 +1,6 @@
 import { Link } from 'solid-app-router'
 import { Component, Show, createSignal, onMount } from 'solid-js'
-import './reader.less'
+import './reader.scss'
 
 import { getBattery } from '../../util'
 
