@@ -10,3 +10,38 @@ $bg-warning: #cf9831;
 $bg-light: #f6f1e7;
 $bg-dark: #7f8c8d;
 $bg-shadow: #fc0;
+
+// 字号
+
+$font-sizes: (
+  'large': 20px,
+  'm-lagre': 18px,
+  'common': 16px,
+  'thin': 14px,
+  'mini': 12px
+);
+
+@each $sizeKey, $size in $font-sizes {
+  .text-#{$sizeKey} {
+    font-size: $size;
+  }
+}
+
+$colors: (
+  'white': #fff,
+  'primary': #3498db,
+  'warning': #cf9831,
+  'light': #f6f1e7,
+  'dark': #7f8c8d,
+  'shadow': #fc0
+);
+
+@each $colorKey, $color in $colors {
+  .text-#{$colorKey} {
+    color: $color;
+  }
+
+  .bg-#{$colorKey} {
+    background-color: $color;
+  }
+}
