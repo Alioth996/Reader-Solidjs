@@ -22,7 +22,14 @@ let navLinks = [
 const NavBar: Component = props => {
   return (
     <footer>
-      <For each={navLinks}>{link => <Link href={link.to}> {link.content} </Link>}</For>
+      <For each={navLinks}>
+        {link => (
+          <Link href={link.to} class='text-primary'>
+            {' '}
+            {link.content}{' '}
+          </Link>
+        )}
+      </For>
     </footer>
   )
 }

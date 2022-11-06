@@ -1,9 +1,6 @@
 @import '../../assets/varible.scss';
 
 .book {
-  // large基于该单位进行 容器大小,字体大小,子元素大小的调整
-  $larg-size: 10vw;
-  $default-size: 7vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -16,6 +13,10 @@
   height: 140px;
   box-shadow: 0 0 5px 2px #666;
   color: $font-color-dark;
+
+  & > p:nth-child(2) {
+    text-shadow: 0 0 15px $bg-shadow;
+  }
 
   &.book-large {
     width: 130px;

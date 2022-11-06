@@ -54,9 +54,6 @@ const Home: Component = () => {
     }
 
     setBookList([...bookList(), book])
-
-    console.log(book)
-
     readBookContent(novel)
   }
 
@@ -82,12 +79,30 @@ const Home: Component = () => {
     })
   }
 
+  const searchBook = e => {
+    if (e.target.value == '') return
+
+    const bookName = e.target.value
+    // 搜索小说
+    const book: Book = bookList().find(x => {
+      // 找到符合的小说
+      if (x.name.includes(bookName)) return x
+    })
+    // 清空输入框,[可选功能]
+    // if (book) {
+    //   e.target.value = ''
+    // }
+
+    // 重新渲染小说列表
+    setBookList([book])
+  }
+
   return (
     <>
       <div id='home'>
         <header>
           <div class='controls-raw'>
-            <input type='text' placeholder='搜索' />
+            <input type='text' placeholder='搜索' class='text-thin' onchange={searchBook} />
             <input type='file' style='display:none;' accept='.txt,.epub' ref={uploadRef} onChange={uploadNovel} />
             <button onclick={() => uploadRef.click()}>+</button>
           </div>
