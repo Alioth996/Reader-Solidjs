@@ -47,7 +47,7 @@ const aboutList: rawInfo[] = [
 export default function () {
   // const [themeColor, setThemeColor] = createSignal('light')
 
-  const setTheme = theme => {
+  const setTheme = (theme: string) => {
     if (theme == 'dark') {
       document.documentElement.setAttribute('theme-dark', '')
     } else {
