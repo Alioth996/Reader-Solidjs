@@ -100,7 +100,7 @@ const Home: Component = () => {
   return (
     <>
       <div id='home'>
-        <header>
+        <header class='bg-white'>
           <div class='controls-raw'>
             <input type='text' placeholder='搜索' class='text-thin' onchange={searchBook} />
             <input type='file' style='display:none;' accept='.txt,.epub' ref={uploadRef} onChange={uploadNovel} />
