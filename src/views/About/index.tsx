@@ -3,7 +3,7 @@ import AppTitle from '../../components/AppTitle'
 import NavBar from '../../components/NavBar'
 
 import './index.scss'
-import { createSignal, For } from 'solid-js'
+import { For } from 'solid-js'
 
 interface rawInfo {
   label: string
