@@ -66,10 +66,10 @@ export default function () {
           </div>
           <div class='theme-btn '>
             <button class='bg-primary text-dark' onclick={[setTheme, 'dark']}>
-              暗夜主题
+              夜雨寄北
             </button>
             <button class='bg-primary text-white' onclick={[setTheme, '']}>
-              白天主题
+              白虹贯日
             </button>
           </div>
         </div>
