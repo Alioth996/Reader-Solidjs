@@ -58,4 +58,46 @@ const addRecord = (db: IDBDatabase, storeName: string, data: any) => {
   }
 }
 
-export { getDB, addRecord }
+/**
+ * @desc 通过主键读取数据
+ * @param {object} db 数据库实例
+ * @param {string} storeName 仓库名称
+ * @param {string} key 主键值
+ */
+function getRecordByKey(db: IDBDatabase, storeName: string, key: number): Promise<any> {
+  return new Promise((resolve, reject) => {
+    const transaction = db.transaction([storeName]) // 事务
+    const objectStore = transaction.objectStore(storeName) // 仓库对象
+    const request = objectStore.get(key) // 通过主键获取数据
+
+    request.onerror = function (_) {
+      console.log('事务失败')
+      reject(request.error)
+    }
+
+    request.onsuccess = function (_) {
+      console.log('主键查询结果: ', request.result)
+      resolve(request.result)
+    }
+  })
+}
+
+/**
+ * @desc 通过主键删除数据
+ * @param {object} db 数据库实例
+ * @param {string} storeName 仓库名称
+ * @param {number} key 主键值
+ */
+function deleteRecord(db: IDBDatabase, storeName: string, key: number) {
+  const request = db.transaction([storeName], 'readwrite').objectStore(storeName).delete(key)
+
+  request.onsuccess = function () {
+    console.log('数据删除成功')
+  }
+
+  request.onerror = function () {
+    console.log('数据删除失败')
+  }
+}
+
+export { getDB, addRecord, getRecordByKey, deleteRecord }
