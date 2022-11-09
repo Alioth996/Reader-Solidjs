@@ -196,4 +196,6 @@ class IDB {
   }
 }
 
-export { getDB, addRecord, getRecordByKey, deleteRecord, IDB }
+// export { getDB, addRecord, getRecordByKey, deleteRecord }
+
+export { IDB }
