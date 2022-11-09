@@ -2,7 +2,11 @@ import { render } from 'solid-js/web'
 import './index.scss'
 import App from './App'
 
-// import { getDB, addRecord } from './util/db'
+import { getDB, addRecord, IDB } from './util/db'
+
+const db = new IDB('test', 'book')
+
+console.log(db)
 
 // getDB('book.akexc.com', 'book').then(db => {
 //   addRecord(db, 'book', {
