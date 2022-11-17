@@ -3,6 +3,7 @@
  * @param {object} dbName 需要连接或者新建的数据库名字
  * @param {string} storeName 对象仓库/表 名称
  * @param {string} version 数据库的版本 默认为1
+ * @param {string[]} indexList 索引列表 索引名称和索引绑定的属性名称保持一致
  * @return {Promise<IDBDatabase>} 返回一个类型为IDBDatabase的Promise对象
  */
 const getDB = (dbName: string, storeName: string, indexList: string[], version?: number): Promise<IDBDatabase> => {
