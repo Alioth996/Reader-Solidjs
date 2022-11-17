@@ -5,7 +5,7 @@
  * @param {string} version 数据库的版本 默认为1
  * @return {Promise<IDBDatabase>} 返回一个类型为IDBDatabase的Promise对象
  */
-const getDB = (dbName: string, storeName: string, version?: number): Promise<IDBDatabase> => {
+const getDB = (dbName: string, storeName: string, indexList: string[], version?: number): Promise<IDBDatabase> => {
   let db: IDBDatabase
   return new Promise((rsv, rej) => {
     const request: IDBOpenDBRequest = indexedDB.open(dbName, version)
@@ -29,8 +29,9 @@ const getDB = (dbName: string, storeName: string, version?: number): Promise<IDB
         })
 
         // 创建索引  objectStore.createIndex('索引名称','索引所绑定的属性',[配置对象])
-        objectStore.createIndex('bookName', 'bookName')
-        objectStore.createIndex('author', 'author')
+        // objectStore.createIndex('bookName', 'bookName')
+        // objectStore.createIndex('author', 'author')
+        indexList.map(rawIndex => objectStore.createIndex(rawIndex, rawIndex))
       }
     })
   })
