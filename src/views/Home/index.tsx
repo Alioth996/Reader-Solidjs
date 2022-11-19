@@ -53,28 +53,29 @@ const Home: Component = () => {
     }
 
     setBookList([...bookList(), book])
-    readBookContent(novel)
+    readBookContent(novel, book)
   }
 
   /**
    * @desc FileReader读取小说全部内容
-   * @param {*Novel} novel
+   * @param {any} novel
+   * @param {Book} book
    */
-  const readBookContent = novel => {
+  const readBookContent = (novel, book: Book) => {
     const novelReader = new FileReader()
 
     novelReader.readAsText(novel, 'utf8')
 
     novelReader.addEventListener('load', e => {
       const { result } = e.target
-
-      console.log(result)
+      // console.log(result)
 
       if (!result) return
 
       // 将小说存入IndexdDB
       getDB('yun-book', 'book', ['content']).then(db => {
         addRecord(db, 'book', {
+          ...book,
           content: result
         })
       })
