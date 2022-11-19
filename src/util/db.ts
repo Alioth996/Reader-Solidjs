@@ -1,6 +1,6 @@
 /**
  * @desc 连接数据库并返回数据库实例
- * @param {object} dbName 需要连接或者新建的数据库名字
+ * @param {string} dbName 需要连接或者新建的数据库名字
  * @param {string} storeName 对象仓库/表 名称
  * @param {string} version 数据库的版本 默认为1
  * @param {string[]} indexList 索引列表 索引名称和索引绑定的属性名称保持一致
@@ -30,8 +30,6 @@ const getDB = (dbName: string, storeName: string, indexList: string[], version?:
         })
 
         // 创建索引  objectStore.createIndex('索引名称','索引所绑定的属性',[配置对象])
-        // objectStore.createIndex('bookName', 'bookName')
-        // objectStore.createIndex('author', 'author')
         indexList.map(rawIndex => objectStore.createIndex(rawIndex, rawIndex))
       }
     })
@@ -43,7 +41,7 @@ const getDB = (dbName: string, storeName: string, indexList: string[], version?:
  * @param db 数据库实例
  * @param storeName 对象仓库名/表名
  * @param data 需要插入的数据
- * @warning 插入的数据是一个对象，而且必须包含我们声明的索引键值对。
+ * @warning 插入的数据是一个对象，而且必须包含声明的索引键值对。
  */
 const addRecord = (db: IDBDatabase, storeName: string, data: any) => {
   // indexedDB需要通过事务进行数据的crud操作
@@ -199,6 +197,6 @@ function deleteRecord(db: IDBDatabase, storeName: string, key: number) {
 //   }
 // }
 
-// export { getDB, addRecord, getRecordByKey, deleteRecord }
+export { getDB, addRecord, getRecordByKey, deleteRecord }
 
 // export { IDB }

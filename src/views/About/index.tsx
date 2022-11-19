@@ -45,8 +45,6 @@ const aboutList: rawInfo[] = [
 ]
 
 export default function () {
-  // const [themeColor, setThemeColor] = createSignal('light')
-
   const setTheme = (theme: string) => {
     if (theme == 'dark') {
       document.documentElement.setAttribute('theme-dark', '')
@@ -59,7 +57,10 @@ export default function () {
     <div id='about'>
       <AppTitle text={'关于'} />
       <main>
+        {/* 软件的详细信息 */}
         <For each={aboutList}>{item => <AboutRaw text={item.text} label={item.label} url={item.url} />}</For>
+
+        {/* 主题设置 */}
         <div class='theme-setting text-center'>
           <div class='theme-title'>
             <strong>主题</strong>
@@ -73,6 +74,7 @@ export default function () {
             </button>
           </div>
         </div>
+        {/* 主题设置 */}
       </main>
       <NavBar />
     </div>

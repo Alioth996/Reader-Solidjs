@@ -1,13 +1,12 @@
 import { Component, For, createSignal } from 'solid-js'
-
 import { Link } from 'solid-app-router'
 
 import './home.scss'
 import NavBar from '../../components/NavBar'
-
-import { parseBook } from '../../util'
 import Book from '../../components/Book'
 
+import { parseBook } from '../../util'
+import { getDB, addRecord } from '../../util/db'
 // interface Novel {
 //   name: string
 //   size: number | string
@@ -69,7 +68,16 @@ const Home: Component = () => {
     novelReader.addEventListener('load', e => {
       const { result } = e.target
 
+      console.log(result)
+
       if (!result) return
+
+      // 将小说存入IndexdDB
+      getDB('yun-book', 'book', ['content']).then(db => {
+        addRecord(db, 'book', {
+          content: result
+        })
+      })
       // 解析小说
       parseBook(result)
     })
@@ -79,6 +87,7 @@ const Home: Component = () => {
     })
   }
 
+  // 搜搜小数
   const searchBook = e => {
     if (e.target.value == '') return
 
