@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      html,
+      body,
+      #app {
+        width: 100vw;
+        min-height: 100vh;
+        height: auto;
+        margin: 0;
+        overflow-x: hidden;
+      }
+      #app {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 12px 30px 12px 12px;
+        background-color: #ece6d9;
+      }
+      * {
+        box-sizing: border-box;
+        padding: 0;
+      }
+
+      .gray-center {
+        color: #7f8c8d;
+        text-align: center;
+      }
+      #chapter-list {
+        display: flex;
+        margin: 0;
+        gap: 10px;
+        width: 100%;
+        padding: 16px;
+        flex-wrap: wrap;
+        list-style: none;
+        align-items: center;
+        justify-content: center;
+      }
+      #chapter-list li {
+        /* flex时li的icon会被隐藏 */
+        flex: 1;
+        color: #2c3e50;
+        cursor: pointer;
+        min-width: 400px;
+        text-align: left;
+        padding: 5px 10px;
+        border-bottom: 1px dotted #3498db80;
+      }
+      #chapter-list li:hover {
+        color: #2980b9;
+      }
+      fieldset {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+      }
+
+      #txt-body {
+        color: #353b48;
+        width: 80%;
+        padding: 15px 30px;
+        line-height: 2em;
+        text-indent: 2em;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <p>
+        <input type="file" name="txt-file" accept=".txt" />
+      </p>
+      <fieldset>
+        <legend>书籍信息</legend>
+        <h1 id="novel-name" class="gray-center">书名:</h1>
+      </fieldset>
+
+      <fieldset>
+        <legend>目录</legend>
+        <h3 id="chapterTitle" class="gray-center"></h3>
+        <ul id="chapter-list"></ul>
+      </fieldset>
+
+      <fieldset>
+        <legend>正文</legend>
+        <h2 class="gray-center">正文</h2>
+        <article id="txt-body">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, ipsum non unde, temporibus ab ea aliquid nihil
+          rerum officiis culpa doloremque esse quam quo sed aspernatur aut in. Qui, esse facere dicta voluptatem quod
+          dolores rerum sit sapiente, vel aperiam illo repellat minima aspernatur assumenda, voluptas magni deleniti
+          sint eos. Non accusamus omnis, deserunt cumque rem ullam esse quis dignissimos possimus, veritatis saepe rerum
+          itaque atque eum inventore similique culpa doloribus assumenda nostrum ea excepturi sit ex ad. Illum nesciunt
+          sequi, explicabo doloribus aperiam amet consequatur quos placeat. Natus assumenda omnis illum, modi itaque
+          rerum dolore nihil iste, incidunt alias, pariatur delectus voluptas. Aperiam eaque nostrum, ducimus voluptate
+          molestiae ab ipsam laboriosam quos vero quibusdam illum sunt dolores ipsa tempora expedita dolor vel, cumque
+          fugit omnis hic. Recusandae eos dolorem soluta culpa maiores, itaque deleniti, provident dolore alias numquam,
+          ipsum obcaecati incidunt molestiae necessitatibus ex cumque. Accusantium et voluptates hic cupiditate, fugiat
+          omnis qui deleniti quis repudiandae eveniet ex quo magni voluptas molestiae eius? Atque iure debitis
+          aspernatur ducimus dolor? A, esse inventore! Iusto amet assumenda voluptatibus porro enim minus vero qui earum
+          magnam aut magni quisquam quod excepturi maxime distinctio ipsa, sint atque dicta placeat culpa neque
+          repellendus commodi! Dolorem corrupti veniam tempora ipsum doloribus commodi nihil incidunt ipsa enim
+          repellendus ex numquam reprehenderit quae illum nesciunt aspernatur, et vel? Temporibus mollitia, numquam
+          optio enim nisi quia, hic animi porro cupiditate id accusamus maiores voluptas iure, sequi laudantium ut!
+          Ducimus necessitatibus est placeat, praesentium molestias eaque error repellendus ut debitis nostrum sed quae
+          laboriosam doloremque illum, voluptates optio adipisci nobis ipsa aspernatur officiis. Iusto, ad, nisi
+          praesentium dolorum voluptates dolor rerum provident, facilis exercitationem obcaecati nemo nostrum delectus!
+          Quis magni nihil deserunt natus. Nemo repudiandae, quo neque ut praesentium ipsam necessitatibus omnis
+          possimus non aliquam aut cum tempora tempore labore ducimus quis ratione ullam, assumenda perspiciatis
+          doloribus mollitia nulla accusantium atque distinctio! Ratione quam deserunt mollitia voluptatibus enim
+          temporibus. Quidem incidunt nostrum commodi magni voluptatibus. Officia asperiores provident minima sequi ex
+          ducimus consequatur eum beatae cum deserunt magnam consequuntur, molestias vero nesciunt delectus possimus
+          tenetur impedit laudantium dicta nulla ullam saepe? Ratione nemo saepe velit architecto magni doloremque,
+          perferendis aut voluptatem voluptates ducimus quaerat, distinctio repellat vero dicta optio dolore porro. Nisi
+          accusamus veniam iste ea excepturi debitis officiis alias. Odit ab in voluptas excepturi voluptatum, est,
+          quam, velit quaerat omnis temporibus commodi ullam laudantium dolorum. Officiis nisi ratione eveniet velit
+          laboriosam vel blanditiis, veniam facilis nemo quaerat, dolor esse maxime corporis optio necessitatibus autem
+          quo officia? Veniam odit dolor consequuntur ipsa explicabo, aliquam laboriosam aliquid expedita nemo officiis.
+          Ex enim velit tenetur eius, sunt culpa autem cum ea quam quas rerum sapiente minus ducimus fugit corporis?
+          Mollitia velit veniam illo similique perferendis nisi ipsum nihil non, sapiente magnam maxime voluptates
+          dolore explicabo quod, accusantium ea dolorem obcaecati molestiae expedita optio sunt? Officiis aliquid culpa
+          explicabo corporis doloremque voluptatem id impedit. Nesciunt labore nam deserunt, voluptates magnam, in vel
+          eaque quod fugit odit necessitatibus hic quo dicta itaque dolorem?
+        </article>
+      </fieldset>
+    </div>
+    <script>
+      const novelEl = document.querySelector('#txt-body')
+      const novelNameEl = document.querySelector('#novel-name')
+      const chapterListEl = document.querySelector('#chapter-list')
+      const chapterTitleEl = document.querySelector('#chapterTitle')
+
+      let bookInfo = {
+        name: '',
+        size: '',
+        author: '',
+        uploadTime: ''
+      }
+
+      //   导入书籍
+      const uploadBook = e => {
+        const novel = e.target.files[0]
+        const { size, name, lastModified } = novel
+
+        bookInfo.name = name.split('.')[0]
+        bookInfo.size = size
+        bookInfo.uploadTime = lastModified
+
+        novelNameEl.innerHTML += bookInfo.name
+        if (!novel) return
+        getBookContext(novel)
+      }
+
+      //  渲染书籍信息,正文
+      const getBookContext = novel => {
+        let bookContent = ''
+
+        const reader = new FileReader()
+        reader.readAsText(novel)
+
+        reader.onload = e => {
+          // 渲染正文
+          bookContent = e.target.result
+          novelEl.innerHTML = bookContent
+
+          //   渲染章节
+          const chapterList = getZJ(bookContent)
+          readerChapter(chapterList)
+        }
+      }
+
+      // 渲染章节列表
+      function readerChapter(chapterList) {
+        //   存储创建的li元素
+        let chapterDOMList = []
+
+        chapterList.map(ch => {
+          let chapterLi = document.createElement('li')
+          chapterLi.innerHTML = ch
+          //   hover 提示
+          chapterLi.title = ch
+          chapterDOMList.push(chapterLi)
+        })
+
+        let totalChater = chapterDOMList.length
+        chapterTitleEl.innerHTML += `<<${bookInfo.name}>> | 共 ${totalChater} 章`
+
+        chapterListEl.append(...chapterDOMList)
+      }
+
+      //   正则提取目录列表并返回
+      function getZJ(novel) {
+        const chapterReg =
+          /(^\s|\n)?(第)([a-zA-Z-0-9零〇一二三四五六气八九十百千万]){1,7}([章节回集卷部])((?! {4}).)((?!\t{1,4}).){0,30}\r?(|\n)/g
+        let chapterList = []
+        chapterList = novel.match(chapterReg)
+        return chapterList
+      }
+
+      function getZW(novel) {
+        const 正文Reg = /(第[一二三四五六七八九十]{1,7}章)+(.*?)+(第[一二三四五六七八九十]{1,7}章)/gm
+      }
+
+      document.querySelector('input').addEventListener('change', uploadBook)
+    </script>
+  </body>
+</html>
